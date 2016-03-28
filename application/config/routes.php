@@ -1,8 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-$route['default_controller'] = 'Tokens';
+$route['default_controller'] = 'Base';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-$route['generate-token'] = "Tokens/GenerateToken";
+$route['generate-token'] = "Base/GenerateToken";
