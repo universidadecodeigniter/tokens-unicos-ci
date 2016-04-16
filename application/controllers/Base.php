@@ -8,6 +8,13 @@ class Base extends CI_Controller {
 		$this->load->model("Tokens_model");
 	}
 
+	/**
+   * Function Index
+   *
+   * Carrega a view da página principal
+   *
+   * @return (string)
+   */
 	public function Index()
 	{
 		//lista 10 tokens gerados
@@ -15,6 +22,13 @@ class Base extends CI_Controller {
 		$this->load->view('home',$data);
 	}
 
+	/**
+   * Function GenerateToken
+   *
+   * Gera o novo token e carrega a view com o token gerado
+   *
+   * @return (string)
+   */
 	public function GenerateToken(){
 		//gera o token a partir de uma string randômica, fazendo uso da função hash(), nativa do PHP
     $token = hash('ripemd160', self::GenerateRandomString());
@@ -29,6 +43,14 @@ class Base extends CI_Controller {
       self::GenerateToken();
   }
 
+	/**
+   * Function GenerateRandomString
+   *
+   * Gera uma string randômica que será utilizada como token
+   *
+	 * @param (string) $length Quantidade de caracteres do token
+   * @return (string)
+   */
 	private function GenerateRandomString($length = 20) {
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 		//retorna o tamanho da string $characters
